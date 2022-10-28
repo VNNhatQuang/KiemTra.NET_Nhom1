@@ -44,10 +44,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTenGoi = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soDienThoaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -153,6 +153,7 @@
             this.btnThemLL.Name = "btnThemLL";
             this.btnThemLL.Size = new System.Drawing.Size(142, 33);
             this.btnThemLL.Text = "Thêm liên lạc";
+            this.btnThemLL.Click += new System.EventHandler(this.btnThemLL_Click);
             // 
             // btnXoaLL
             // 
@@ -161,6 +162,7 @@
             this.btnXoaLL.Name = "btnXoaLL";
             this.btnXoaLL.Size = new System.Drawing.Size(129, 33);
             this.btnXoaLL.Text = "Xóa liên lạc";
+            this.btnXoaLL.Click += new System.EventHandler(this.btnXoaLL_Click);
             // 
             // txtTimKiem
             // 
@@ -220,41 +222,41 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "[Tên gọi]";
             // 
-            // textBox1
+            // txtTenGoi
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTenGoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(508, 363);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(436, 26);
-            this.textBox1.TabIndex = 7;
+            this.txtTenGoi.Location = new System.Drawing.Point(508, 363);
+            this.txtTenGoi.Name = "txtTenGoi";
+            this.txtTenGoi.Size = new System.Drawing.Size(436, 26);
+            this.txtTenGoi.TabIndex = 7;
             // 
-            // textBox2
+            // txtDiaChi
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtDiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(508, 402);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(436, 26);
-            this.textBox2.TabIndex = 8;
+            this.txtDiaChi.Location = new System.Drawing.Point(508, 402);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(436, 26);
+            this.txtDiaChi.TabIndex = 8;
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(508, 434);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(436, 26);
-            this.textBox3.TabIndex = 9;
+            this.txtEmail.Location = new System.Drawing.Point(508, 434);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(436, 26);
+            this.txtEmail.TabIndex = 9;
             // 
-            // textBox4
+            // txtSDT
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(508, 467);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(436, 26);
-            this.textBox4.TabIndex = 10;
+            this.txtSDT.Location = new System.Drawing.Point(508, 467);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(436, 26);
+            this.txtSDT.TabIndex = 10;
             // 
             // hoTenDataGridViewTextBoxColumn
             // 
@@ -305,10 +307,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 518);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtDiaChi);
+            this.Controls.Add(this.txtTenGoi);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -351,10 +353,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTenGoi;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtSDT;
     }
 }
 

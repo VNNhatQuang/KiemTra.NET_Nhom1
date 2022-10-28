@@ -63,5 +63,30 @@ namespace KiemTra
         {
             
         }
+
+        private void btnXoaLL_Click(object sender, EventArgs e)
+        {
+            if (selectedSinhVien != null)
+            {
+                var rs = MessageBox.Show("Bạn có chắc là muốn xóa?", "Chú ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (rs == DialogResult.OK)
+                {
+                    SinhVienServices.RemoveSinhVien(selectedSinhVien);
+                    NapDSSinhVien();
+                }
+            }
+        }
+
+        private void btnThemLL_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra MSV trùng hay không
+            // MSV, Họ Tên, không được để trống
+            var a = new addLienLac();
+            var rs = a.ShowDialog();
+            if (rs == DialogResult.OK)
+            {
+                NapDSSinhVien();
+            }
+        }
     }
 }
