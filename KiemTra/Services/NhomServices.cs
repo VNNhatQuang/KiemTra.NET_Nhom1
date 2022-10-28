@@ -36,7 +36,7 @@ namespace KiemTra.Services
             return rs;
         }
 
-        public static KetQua AddLopHoc(Nhom n)
+        public static KetQua AddNhom(Nhom n)
         {
             var db = new AppDBContext();
             var count = db.Nhom.Where(e => e.MaNhom == n.MaNhom).Count();
@@ -52,7 +52,7 @@ namespace KiemTra.Services
             }
         }
 
-        public static KetQua UpdateLop(Nhom n)
+        public static KetQua UpdateNhom(Nhom n)
         {
             var db = new AppDBContext();
             var nhom = db.Nhom.Where(e => e.MaNhom == n.MaNhom).FirstOrDefault();
@@ -62,7 +62,7 @@ namespace KiemTra.Services
             return KetQua.ThanhCong;
         }
 
-        public static KetQua RemoveLopHoc(NhomViewModel n)
+        public static KetQua RemoveNhom(NhomViewModel n)
         {
             var db = new AppDBContext();
             var lopHoc = db.Nhom.Where(e => e.MaNhom == n.ID).FirstOrDefault();

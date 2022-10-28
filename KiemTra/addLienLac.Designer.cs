@@ -49,7 +49,7 @@
             this.txtSDT.Location = new System.Drawing.Point(121, 174);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(343, 26);
-            this.txtSDT.TabIndex = 30;
+            this.txtSDT.TabIndex = 8;
             this.txtSDT.TextChanged += new System.EventHandler(this.txtQueQuan_TextChanged);
             // 
             // label6
@@ -67,7 +67,7 @@
             this.btnDongY.Location = new System.Drawing.Point(240, 234);
             this.btnDongY.Name = "btnDongY";
             this.btnDongY.Size = new System.Drawing.Size(104, 53);
-            this.btnDongY.TabIndex = 35;
+            this.btnDongY.TabIndex = 9;
             this.btnDongY.Text = "Đồng ý";
             this.btnDongY.UseVisualStyleBackColor = true;
             this.btnDongY.Click += new System.EventHandler(this.btnDongY_Click);
@@ -78,7 +78,7 @@
             this.btnBoQua.Location = new System.Drawing.Point(350, 234);
             this.btnBoQua.Name = "btnBoQua";
             this.btnBoQua.Size = new System.Drawing.Size(115, 53);
-            this.btnBoQua.TabIndex = 36;
+            this.btnBoQua.TabIndex = 10;
             this.btnBoQua.Text = "Bỏ qua";
             this.btnBoQua.UseVisualStyleBackColor = true;
             // 
@@ -87,7 +87,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(121, 78);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(343, 26);
-            this.txtHoTen.TabIndex = 24;
+            this.txtHoTen.TabIndex = 5;
             this.txtHoTen.TextChanged += new System.EventHandler(this.txtTen_TextChanged);
             // 
             // txtMaSinhVien
@@ -95,7 +95,7 @@
             this.txtMaSinhVien.Location = new System.Drawing.Point(121, 46);
             this.txtMaSinhVien.Name = "txtMaSinhVien";
             this.txtMaSinhVien.Size = new System.Drawing.Size(343, 26);
-            this.txtMaSinhVien.TabIndex = 22;
+            this.txtMaSinhVien.TabIndex = 4;
             this.txtMaSinhVien.TextChanged += new System.EventHandler(this.txtMaSinhVien_TextChanged);
             // 
             // label3
@@ -122,7 +122,7 @@
             this.cbNhom.Location = new System.Drawing.Point(121, 12);
             this.cbNhom.Name = "cbNhom";
             this.cbNhom.Size = new System.Drawing.Size(343, 28);
-            this.cbNhom.TabIndex = 21;
+            this.cbNhom.TabIndex = 3;
             // 
             // label1
             // 
@@ -138,7 +138,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(121, 142);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(343, 26);
-            this.txtDiaChi.TabIndex = 38;
+            this.txtDiaChi.TabIndex = 7;
             // 
             // label4
             // 
@@ -154,7 +154,7 @@
             this.txtEmail.Location = new System.Drawing.Point(121, 110);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(343, 26);
-            this.txtEmail.TabIndex = 40;
+            this.txtEmail.TabIndex = 6;
             // 
             // label5
             // 
@@ -185,7 +185,7 @@
             this.Controls.Add(this.cbNhom);
             this.Controls.Add(this.label1);
             this.Name = "addLienLac";
-            this.Text = "addLienLac";
+            this.Text = "Thêm Liên Lạc";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,5 @@
-﻿using KiemTra.Services;
+﻿using KiemTra.Model;
+using KiemTra.Services;
 using KiemTra.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace KiemTra
         {
             InitializeComponent();
             NapDSNhom();
+            
+
             NapDSSinhVien();
         }
 
@@ -59,9 +62,26 @@ namespace KiemTra
             NapDSSinhVien();
         }
 
+        private NhomViewModel GetSelectedNhom()
+        {
+            return selectedNhom;
+        }
+
+        void HienThiChiTietLienLac()
+        {
+            if (selectedSinhVien != null)
+            {
+                var ls = SinhVienServices.GetSinhVien();
+                txtTenGoi.Text = ls.HoTen;
+                txtDiaChi.Text = ls.DiaChi;
+                txtEmail.Text = ls.Email;
+                txtSDT.Text = ls.SoDienThoai;
+            }
+        }
+
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            HienThiChiTietLienLac();
         }
 
         private void btnXoaLL_Click(object sender, EventArgs e)
@@ -79,13 +99,34 @@ namespace KiemTra
 
         private void btnThemLL_Click(object sender, EventArgs e)
         {
-            // Kiểm tra MSV trùng hay không
-            // MSV, Họ Tên, không được để trống
             var a = new addLienLac();
             var rs = a.ShowDialog();
             if (rs == DialogResult.OK)
             {
                 NapDSSinhVien();
+            }
+        }
+
+        private void btnThemNhom_Click(object sender, EventArgs e)
+        {
+            var a = new addNhom();
+            var rs = a.ShowDialog();
+            if (rs == DialogResult.OK)
+            {
+                NapDSNhom();
+            }
+        }
+
+        private void btnXoaNhom_Click(object sender, EventArgs e)
+        {
+            if (selectedNhom != null)
+            {
+                var rs = MessageBox.Show("Bạn có chắc là muốn xóa?", "Chú ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (rs == DialogResult.OK)
+                {
+                    NhomServices.RemoveNhom(selectedNhom);
+                    NapDSNhom();
+                }
             }
         }
     }

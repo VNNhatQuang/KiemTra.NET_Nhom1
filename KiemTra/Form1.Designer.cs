@@ -121,7 +121,7 @@
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(981, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(981, 34);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -130,28 +130,30 @@
             this.btnThemNhom.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNhom.Image")));
             this.btnThemNhom.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThemNhom.Name = "btnThemNhom";
-            this.btnThemNhom.Size = new System.Drawing.Size(136, 33);
+            this.btnThemNhom.Size = new System.Drawing.Size(136, 29);
             this.btnThemNhom.Text = "Thêm nhóm";
+            this.btnThemNhom.Click += new System.EventHandler(this.btnThemNhom_Click);
             // 
             // btnXoaNhom
             // 
             this.btnXoaNhom.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNhom.Image")));
             this.btnXoaNhom.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoaNhom.Name = "btnXoaNhom";
-            this.btnXoaNhom.Size = new System.Drawing.Size(123, 33);
+            this.btnXoaNhom.Size = new System.Drawing.Size(123, 29);
             this.btnXoaNhom.Text = "Xóa nhóm";
+            this.btnXoaNhom.Click += new System.EventHandler(this.btnXoaNhom_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
             // 
             // btnThemLL
             // 
             this.btnThemLL.Image = ((System.Drawing.Image)(resources.GetObject("btnThemLL.Image")));
             this.btnThemLL.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThemLL.Name = "btnThemLL";
-            this.btnThemLL.Size = new System.Drawing.Size(142, 33);
+            this.btnThemLL.Size = new System.Drawing.Size(142, 29);
             this.btnThemLL.Text = "Thêm liên lạc";
             this.btnThemLL.Click += new System.EventHandler(this.btnThemLL_Click);
             // 
@@ -160,7 +162,7 @@
             this.btnXoaLL.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaLL.Image")));
             this.btnXoaLL.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoaLL.Name = "btnXoaLL";
-            this.btnXoaLL.Size = new System.Drawing.Size(129, 33);
+            this.btnXoaLL.Size = new System.Drawing.Size(129, 29);
             this.btnXoaLL.Text = "Xóa liên lạc";
             this.btnXoaLL.Click += new System.EventHandler(this.btnXoaLL_Click);
             // 
@@ -169,13 +171,13 @@
             this.txtTimKiem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(150, 38);
+            this.txtTimKiem.Size = new System.Drawing.Size(150, 34);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(140, 33);
+            this.toolStripLabel1.Size = new System.Drawing.Size(140, 29);
             this.toolStripLabel1.Text = "Nhập từ cần tìm";
             // 
             // label1

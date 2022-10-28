@@ -61,6 +61,12 @@
     <Compile Include="addLienLac.Designer.cs">
       <DependentUpon>addLienLac.cs</DependentUpon>
     </Compile>
+    <Compile Include="addNhom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addNhom.Designer.cs">
+      <DependentUpon>addNhom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="ViewModel\SinhVienViewModel.cs" />
     <EmbeddedResource Include="addLienLac.resx">
       <DependentUpon>addLienLac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addNhom.resx">
+      <DependentUpon>addNhom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

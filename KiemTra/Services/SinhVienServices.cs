@@ -26,6 +26,22 @@ namespace KiemTra.Services
             return rs;
         }
 
+        public static SinhVienViewModel GetSinhVien()
+        {
+            var db = new AppDBContext();
+            var rs = db.SinhVien.Select(e => new SinhVienViewModel
+            {
+                ID = e.MaSinhVien,
+                HoTen = e.HoTen,
+                DiaChi = e.DiaChi,
+                Email = e.Email,
+                ID_Nhom = e.IDNhom,
+                SoDienThoai = e.SoDienThoai,
+            }).ToList();
+
+            return rs[0];
+        }
+
         public static List<SinhVienViewModel> GetList(int idNhom)
         {
             var db = new AppDBContext();
