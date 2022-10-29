@@ -26,20 +26,48 @@ namespace KiemTra.Services
             return rs;
         }
 
-        public static SinhVienViewModel GetSinhVien()
+        public static SinhVienViewModel GetSinhVien(string tensv)
         {
             var db = new AppDBContext();
-            var rs = db.SinhVien.Select(e => new SinhVienViewModel
-            {
-                ID = e.MaSinhVien,
-                HoTen = e.HoTen,
-                DiaChi = e.DiaChi,
-                Email = e.Email,
-                ID_Nhom = e.IDNhom,
-                SoDienThoai = e.SoDienThoai,
-            }).ToList();
+            var rs = db.SinhVien
+                .Where(e => e.MaSinhVien == tensv)
+                .Select(e => new SinhVienViewModel
+                {
+                    ID = e.MaSinhVien,
+                    SoDienThoai = e.SoDienThoai,
+                    DiaChi = e.DiaChi,
+                    Email = e.Email,
+                    HoTen = e.HoTen,
+                    ID_Nhom = e.IDNhom
+                }).ToList();
 
             return rs[0];
+        }
+
+        public static SinhVienViewModel TimKiem(string tengoi, int idnhom)
+        {
+            try
+            {
+                var db = new AppDBContext();
+                var rs = db.SinhVien
+                    .Where(e => e.IDNhom == idnhom)
+                    .Where(e => e.HoTen == tengoi)
+                    .Select(e => new SinhVienViewModel
+                    {
+                        ID = e.MaSinhVien,
+                        SoDienThoai = e.SoDienThoai,
+                        DiaChi = e.DiaChi,
+                        Email = e.Email,
+                        HoTen = e.HoTen,
+                        ID_Nhom = e.IDNhom
+                    }).ToList();
+
+                return rs[0];
+            }
+            catch(Exception)
+            {
+                return null;
+            }
         }
 
         public static List<SinhVienViewModel> GetList(int idNhom)

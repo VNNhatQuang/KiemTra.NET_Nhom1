@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace KiemTra
 {
@@ -71,7 +72,7 @@ namespace KiemTra
         {
             if (selectedSinhVien != null)
             {
-                var ls = SinhVienServices.GetSinhVien();
+                var ls = SinhVienServices.GetSinhVien(selectedSinhVien.ID);
                 txtTenGoi.Text = ls.HoTen;
                 txtDiaChi.Text = ls.DiaChi;
                 txtEmail.Text = ls.Email;
@@ -127,6 +128,35 @@ namespace KiemTra
                     NhomServices.RemoveNhom(selectedNhom);
                     NapDSNhom();
                 }
+            }
+        }
+
+        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                var ls = SinhVienServices.TimKiem(txtTimKiem.Text, selectedNhom.ID);
+                if (ls==null)
+                {
+                    MessageBox.Show($"Không tìm thấy {txtTimKiem.Text}!");
+                }
+                else
+                {
+                    txtTenGoi.Text = ls.HoTen;
+                    txtDiaChi.Text = ls.DiaChi;
+                    txtEmail.Text = ls.Email;
+                    txtSDT.Text = ls.SoDienThoai;
+
+                    for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                    {
+                        if (dataGridView2.Rows[i].Cells[0].Value.ToString().Equals(txtTimKiem.Text))
+                        {
+                            dataGridView2.CurrentCell = dataGridView2.Rows[i].Cells[0];
+                            dataGridView2.CurrentRow.Selected = true;
+                        }
+                    }
+                }
+
             }
         }
     }
