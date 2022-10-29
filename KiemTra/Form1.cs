@@ -149,10 +149,13 @@ namespace KiemTra
 
                     for (int i = 0; i < dataGridView2.Rows.Count; i++)
                     {
-                        if (dataGridView2.Rows[i].Cells[0].Value.ToString().Equals(txtTimKiem.Text))
+                        for (int j=0; j<dataGridView2.Columns.Count; j++)
                         {
-                            dataGridView2.CurrentCell = dataGridView2.Rows[i].Cells[0];
-                            dataGridView2.CurrentRow.Selected = true;
+                            if (dataGridView2.Rows[i].Cells[j].Value.ToString().Equals(txtTimKiem.Text))
+                            {
+                                dataGridView2.CurrentCell = dataGridView2.Rows[i].Cells[j];
+                                dataGridView2.CurrentRow.Selected = true;
+                            }
                         }
                     }
                 }

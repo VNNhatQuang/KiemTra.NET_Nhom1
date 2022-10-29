@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace KiemTra.Services
 {
@@ -44,32 +45,6 @@ namespace KiemTra.Services
             return rs[0];
         }
 
-        public static SinhVienViewModel TimKiem(string tengoi, int idnhom)
-        {
-            try
-            {
-                var db = new AppDBContext();
-                var rs = db.SinhVien
-                    .Where(e => e.IDNhom == idnhom)
-                    .Where(e => e.HoTen == tengoi)
-                    .Select(e => new SinhVienViewModel
-                    {
-                        ID = e.MaSinhVien,
-                        SoDienThoai = e.SoDienThoai,
-                        DiaChi = e.DiaChi,
-                        Email = e.Email,
-                        HoTen = e.HoTen,
-                        ID_Nhom = e.IDNhom
-                    }).ToList();
-
-                return rs[0];
-            }
-            catch(Exception)
-            {
-                return null;
-            }
-        }
-
         public static List<SinhVienViewModel> GetList(int idNhom)
         {
             var db = new AppDBContext();
@@ -104,20 +79,6 @@ namespace KiemTra.Services
             }
         }
 
-        public static KetQua UpdateSinhVien(SinhVienViewModel sv)
-        {
-            var db = new AppDBContext();
-            var sinhVien = db.SinhVien.Where(e => e.MaSinhVien == sv.ID).FirstOrDefault();
-            sinhVien.MaSinhVien = sv.ID;
-            sinhVien.IDNhom = sv.ID_Nhom;
-            sinhVien.Email = sv.Email;
-            sinhVien.DiaChi = sv.DiaChi;
-            sinhVien.HoTen = sv.HoTen;
-            sinhVien.SoDienThoai = sv.SoDienThoai;
-            db.SaveChanges();
-            return KetQua.ThanhCong;
-        }
-
         public static KetQua RemoveSinhVien(SinhVienViewModel sv)
         {
             var db = new AppDBContext();
@@ -126,6 +87,32 @@ namespace KiemTra.Services
             db.SaveChanges();
 
             return KetQua.ThanhCong;
+        }
+
+        public static SinhVienViewModel TimKiem(string timkiem, int idnhom)
+        {
+            try
+            {
+                var db = new AppDBContext();
+                var rs = db.SinhVien
+                    .Where(e => e.IDNhom == idnhom)
+                    .Where(e => (e.HoTen == timkiem || e.Email == timkiem || e.SoDienThoai == timkiem))
+                    .Select(e => new SinhVienViewModel
+                    {
+                        ID = e.MaSinhVien,
+                        SoDienThoai = e.SoDienThoai,
+                        DiaChi = e.DiaChi,
+                        Email = e.Email,
+                        HoTen = e.HoTen,
+                        ID_Nhom = e.IDNhom
+                    }).ToList();
+
+                return rs[0];
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }
