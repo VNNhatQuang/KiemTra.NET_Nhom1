@@ -50,7 +50,6 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(343, 26);
             this.txtSDT.TabIndex = 8;
-            this.txtSDT.TextChanged += new System.EventHandler(this.txtQueQuan_TextChanged);
             // 
             // label6
             // 
@@ -60,7 +59,6 @@
             this.label6.Size = new System.Drawing.Size(110, 20);
             this.label6.TabIndex = 37;
             this.label6.Text = "Số điện thoại: ";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnDongY
             // 
@@ -88,7 +86,6 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(343, 26);
             this.txtHoTen.TabIndex = 5;
-            this.txtHoTen.TextChanged += new System.EventHandler(this.txtTen_TextChanged);
             // 
             // txtMaSinhVien
             // 
@@ -96,7 +93,6 @@
             this.txtMaSinhVien.Name = "txtMaSinhVien";
             this.txtMaSinhVien.Size = new System.Drawing.Size(343, 26);
             this.txtMaSinhVien.TabIndex = 4;
-            this.txtMaSinhVien.TextChanged += new System.EventHandler(this.txtMaSinhVien_TextChanged);
             // 
             // label3
             // 

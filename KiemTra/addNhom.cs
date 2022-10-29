@@ -37,9 +37,7 @@ namespace KiemTra
             }
         }
 
-        private void btnBoQua_Click(object sender, EventArgs e)
-        {
-            
-        }
+
+
     }
 }

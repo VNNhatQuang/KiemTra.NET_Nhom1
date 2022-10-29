@@ -36,25 +36,6 @@ namespace KiemTra
             cbNhom.DisplayMember = "TenNhom";
         }
 
-        private void txtQueQuan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMaSinhVien_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTen_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnDongY_Click(object sender, EventArgs e)
         {
@@ -79,5 +60,8 @@ namespace KiemTra
             }
             #endregion
         }
+
+
+
     }
 }
