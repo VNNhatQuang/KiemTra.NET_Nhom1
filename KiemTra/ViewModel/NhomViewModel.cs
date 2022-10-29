@@ -13,10 +13,6 @@ namespace KiemTra.ViewModel
         public string TenNhom { get; set; }
 
 
-        /// <summary>
-        /// Lấy toàn bộ lớp học
-        /// </summary>
-        /// <returns></returns>
         public static List<NhomViewModel> GetList()
         {
             var db = new AppDBContext();

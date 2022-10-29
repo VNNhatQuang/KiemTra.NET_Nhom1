@@ -73,10 +73,10 @@ namespace KiemTra
             if (selectedSinhVien != null)
             {
                 var ls = SinhVienServices.GetSinhVien(selectedSinhVien.ID);
-                txtTenGoi.Text = ls.HoTen;
-                txtDiaChi.Text = ls.DiaChi;
-                txtEmail.Text = ls.Email;
-                txtSDT.Text = ls.SoDienThoai;
+                lbTenGoi.Text = ls.HoTen;
+                lbDiaChi.Text = ls.DiaChi;
+                lbEmail.Text = ls.Email;
+                lbSDT.Text = ls.SoDienThoai;
             }
         }
 
@@ -138,14 +138,14 @@ namespace KiemTra
                 var ls = SinhVienServices.TimKiem(txtTimKiem.Text, selectedNhom.ID);
                 if (ls==null)
                 {
-                    MessageBox.Show($"Không tìm thấy {txtTimKiem.Text}!");
+                    MessageBox.Show($"Không tìm thấy {txtTimKiem.Text} trong Nhóm {selectedNhom.TenNhom}", "Không tìm thấy", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    txtTenGoi.Text = ls.HoTen;
-                    txtDiaChi.Text = ls.DiaChi;
-                    txtEmail.Text = ls.Email;
-                    txtSDT.Text = ls.SoDienThoai;
+                    lbTenGoi.Text = ls.HoTen;
+                    lbDiaChi.Text = ls.DiaChi;
+                    lbEmail.Text = ls.Email;
+                    lbSDT.Text = ls.SoDienThoai;
 
                     for (int i = 0; i < dataGridView2.Rows.Count; i++)
                     {
