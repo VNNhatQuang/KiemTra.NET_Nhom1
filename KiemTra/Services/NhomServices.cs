@@ -52,15 +52,6 @@ namespace KiemTra.Services
             }
         }
 
-        public static KetQua UpdateNhom(Nhom n)
-        {
-            var db = new AppDBContext();
-            var nhom = db.Nhom.Where(e => e.MaNhom == n.MaNhom).FirstOrDefault();
-            nhom.TenNhom = n.TenNhom;
-            nhom.MaNhom = n.MaNhom;
-            db.SaveChanges();
-            return KetQua.ThanhCong;
-        }
 
         public static KetQua RemoveNhom(NhomViewModel n)
         {

@@ -32,7 +32,7 @@ namespace KiemTra
             }
             else
             {
-                MessageBox.Show("Mã sinh viên trùng", "Thông báo");
+                MessageBox.Show("Tên Nhóm trùng!", "Thông báo");
                 txtTenNhom.Focus();
             }
         }

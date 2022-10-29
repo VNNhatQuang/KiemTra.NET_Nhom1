@@ -96,7 +96,7 @@ namespace KiemTra.Services
                 var db = new AppDBContext();
                 var rs = db.SinhVien
                     .Where(e => e.IDNhom == idnhom)
-                    .Where(e => (e.HoTen == timkiem || e.Email == timkiem || e.SoDienThoai == timkiem))
+                    .Where(e => (e.HoTen == timkiem || e.Email == timkiem || e.SoDienThoai == timkiem || e.MaSinhVien == timkiem))
                     .Select(e => new SinhVienViewModel
                     {
                         ID = e.MaSinhVien,
